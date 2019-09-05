@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div id="Home">
     <button @click="Go">123</button>
   </div>
 </template>
@@ -27,3 +27,8 @@ export default {
   directives: {}
 };
 </script>
+<style scoped lang="scss">
+#Home {
+
+}
+</style>

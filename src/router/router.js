@@ -1,7 +1,7 @@
 import Vue from "vue";
 import Router from "vue-router";
 import Home from "../views/Home.vue";
-import Content from "../views/content/Content"
+import Content from "../views/content/Content";
 
 Vue.use(Router);
 
@@ -13,25 +13,38 @@ export default new Router({
       path: "/",
       name: "home",
       component: Content,
-      children:[
+      children: [
         {
-          path:"",
-          component: Home,
+          path: "",
+          component: Home
         }
       ]
     },
+    //登录页面路由
     {
       path: "/Login",
       name: "home",
       component: Content,
-      children:[
+      children: [
         {
-          path:"",
-          component: () => import('../views/Login.vue')
+          path: "",
+          component: () => import("../views/Login.vue")
+        }
+      ]
+    },
+    //注册页面路由
+    {
+      path: "/Register",
+      name: "home",
+      component: Content,
+      children: [
+        {
+          path: "",
+          component: () => import("../views/Register.vue")
         }
       ]
     }
-   /* {
+    /* {
       path: "/about",
       name: "about",
       // route level code-splitting

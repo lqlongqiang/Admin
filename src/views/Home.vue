@@ -1,6 +1,5 @@
 <template>
   <div id="Home">
-    <button @click="Go">123</button>
   </div>
 </template>
 
@@ -15,9 +14,7 @@ export default {
     return {};
   },
   methods: {
-    Go() {
-      this.$router.push({ path: "/Login" });
-    }
+
   },
   mounted() {},
   created() {},

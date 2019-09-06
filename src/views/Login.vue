@@ -213,7 +213,7 @@ export default {
             captcha: this.ruleForm.inputCode
           })
           .then(respons => {
-            console.log(respons);
+            //console.log(respons);
             let users = respons.data.data;
             if (respons.data.code === 200) {
               this.$message({
@@ -223,9 +223,9 @@ export default {
               localStorage.setItem("users", JSON.stringify(users));
               this.$router.push({ path: "/" });
             } else if (respons.data.code === 500) {
-              this.$message.error("用户名不存在");
+              this.$message.error(respons.data.msg);
             } else {
-              this.$message.error("验证码不正确");
+              this.$message.error(respons.data.msg);
             }
           })
           .catch(err => {

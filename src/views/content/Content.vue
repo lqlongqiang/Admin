@@ -4,9 +4,11 @@
       v-if="$route.path === '/Login' || $route.path === '/Register'"
     ></router-view>
     <el-container style="height: 2000px;" v-else>
-      <el-header style="padding: 0;height: 40px;" class=""><Header></Header></el-header>
+      <el-header style="padding: 0;height: 40px;" class=""
+        ><Header></Header
+      ></el-header>
       <el-container>
-        <el-aside width="140px">aside</el-aside>
+        <el-aside width="200px"><Aside></Aside></el-aside>
         <el-main class="el_-_main">
           <router-view></router-view>
         </el-main>
@@ -16,11 +18,13 @@
 </template>
 
 <script>
-  import Header from "../../components/Header"
+import Header from "../../components/Header";
+import Aside from "../../components/Aside";
 export default {
   name: "",
   components: {
-    Header
+    Header,
+    Aside
   },
   props: {},
   data() {
@@ -38,6 +42,6 @@ export default {
 
 <style scoped>
 .el_-_main {
-  background-color: #F0F2F5;
+  background-color: #f0f2f5;
 }
 </style>

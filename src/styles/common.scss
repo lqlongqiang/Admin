@@ -1,0 +1,22 @@
+.modifyPassword{
+  .el-dialog__body {
+    padding: 0 20px;
+  }
+  .el-dialog__header {
+    padding: 20px;
+  }
+}
+.el-menu-vertical-demo {
+  .el-menu-item{
+    width: 200px;
+    border-bottom:1px solid #F0F2F5 ;
+    padding: 0px 10px 0 20px !important;
+  }
+  .el-menu-item:nth-child(1) {
+    border-top: 1px solid #F0F2F5;
+  }
+  .is-active {
+    border-left:5px solid #409EFF;
+    padding: 0px 10px 0 15px !important;
+  }
+}

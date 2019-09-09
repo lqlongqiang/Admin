@@ -8,8 +8,12 @@
         ><Header></Header
       ></el-header>
       <el-container>
-        <el-aside width="200px"><Aside></Aside></el-aside>
+        <el-aside width="200px" v-if="Flag === true"
+          ><Aside :flag="Flag"></Aside
+        ></el-aside>
+        <el-aside width="100px" v-else><Aside :flag="Flag"></Aside></el-aside>
         <el-main class="el_-_main">
+          <Navigation @Flag="getData"></Navigation>
           <router-view></router-view>
         </el-main>
       </el-container>
@@ -20,17 +24,27 @@
 <script>
 import Header from "../../components/Header";
 import Aside from "../../components/Aside";
+import Navigation from "../../components/Crumbnavigation";
 export default {
   name: "",
   components: {
     Header,
-    Aside
+    Aside,
+    Navigation
   },
   props: {},
   data() {
-    return {};
+    return {
+      Flag: true //接受Home组件传过来的值
+    };
   },
-  methods: {},
+  methods: {
+    //通过事件接受Home组件传过来的值
+    getData(data) {
+      this.Flag = data;
+      //console.log(this.Flag);
+    }
+  },
   mounted() {},
   created() {},
   filters: {},

@@ -11,9 +11,12 @@ export default new Router({
   routes: [
     {
       path: "/",
-      name: "home",
       component: Content,
       children: [
+        {
+          path:"/",
+          redirect:"/Homepage"
+        },
         {
           path: "",
           component: Home
@@ -23,9 +26,9 @@ export default new Router({
     //登录页面路由
     {
       path: "/Login",
-      name: "home",
       component: Content,
       children: [
+
         {
           path: "",
           component: () => import("../views/Login.vue")
@@ -35,12 +38,32 @@ export default new Router({
     //注册页面路由
     {
       path: "/Register",
-      name: "home",
       component: Content,
       children: [
         {
           path: "",
           component: () => import("../views/Register.vue")
+        }
+      ]
+    },
+    {
+      path: "/Homepage",
+      component: Content,
+      children: [
+
+        {
+          path: "",
+          component: () => import("../views/Homepage.vue")
+        }
+      ]
+    },
+    {
+      path: "/Tasks",
+      component: Content,
+      children: [
+        {
+          path: "",
+          component: () => import("../views/Tasks.vue")
         }
       ]
     }

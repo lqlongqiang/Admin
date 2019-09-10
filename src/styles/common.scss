@@ -56,5 +56,12 @@
     display: flex;
     align-items: center;
   }
-
+}
+.Dynamic_people {
+  .el-select__tags-text {
+    color: #409EFF;
+  }
+  .el-tag__close {
+    background-color: white !important;
+  }
 }

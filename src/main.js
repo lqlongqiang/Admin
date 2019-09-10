@@ -10,6 +10,7 @@ import axios from "./http";
 import mavonEditor from "mavon-editor";
 import "mavon-editor/dist/css/index.css";
 import JsonExcel from "vue-json-excel";
+import "./mock";
 
 Vue.prototype.$axios = axios;
 Vue.prototype.$dayjs = dayjs;

@@ -37,7 +37,7 @@
           width="500px"
           style="height: 500px"
           title="提示"
-          :modal="false"
+          :modal-append-to-body ="false"
           class="modifyPassword"
         >
           <el-form>

@@ -50,7 +50,6 @@ export default new Router({
       path: "/Homepage",
       component: Content,
       children: [
-
         {
           path: "",
           component: () => import("../views/Homepage.vue")
@@ -66,7 +65,17 @@ export default new Router({
           component: () => import("../views/Tasks.vue")
         }
       ]
-    }
+    },
+    {
+      path: "/MailList",
+      component: Content,
+      children: [
+        {
+          path: "",
+          component: () => import("../views/MailList.vue")
+        }
+      ]
+    },
     /* {
       path: "/about",
       name: "about",

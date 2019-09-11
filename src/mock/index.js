@@ -23,5 +23,20 @@ Mock.mock("api/cityColor", "get", {
 Mock.mock("api/ReportData", "get", {
   code: 200,
   msg: "success",
-  "data|20": [{  label: "@cname()" }]
+  "data|20": [{ label: "@cname()" }]
+});
+//模拟调查问卷数据
+Mock.mock("api/Investigation", "get", {
+  code: 200,
+  msg: "success",
+  "data|30": [
+    {
+      questionnaireTitle: "@cword(2,4)",
+      questionnaireDescription: "@cword(2,5)",
+      Creationtime: "@date('yyyy-MM-dd')",
+      Deadline: "@date('yyyy-MM-dd')",
+      "Questionnairetopics|1": ["已发布", "未发布", "已截止"],
+      "website|1": ["百度", "掘金", "豆瓣", "Github"]
+    }
+  ]
 });

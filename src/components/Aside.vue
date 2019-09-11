@@ -96,7 +96,7 @@ export default {
         {
           title: "通讯录",
           icon: "el-icon-document",
-          name: "mailList"
+          path: "/mailList"
         },
         {
           title: "组织员工",

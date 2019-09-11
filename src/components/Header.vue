@@ -211,7 +211,7 @@ export default {
     //判断登录和里面有无默认头像
     if (JSON.parse(localStorage.getItem("users"))) {
       this.user = JSON.parse(localStorage.getItem("users"));
-      console.log(this.user);
+      //console.log(this.user);
       if (!this.user.Headportrait) {
         this.flag = false;
       }

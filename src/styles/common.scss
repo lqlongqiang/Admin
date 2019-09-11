@@ -65,3 +65,24 @@
     background-color: white !important;
   }
 }
+.box-card  {
+  .el-card__header{
+    padding: 0 0 0 20px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #888888;
+  }
+}
+.table_quest {
+  .is-leaf{
+    text-align: center;
+  }
+  .el-table__row {
+    text-align: center;
+  }
+  .cell {
+    text-align: center;
+  }
+}

@@ -86,3 +86,8 @@
     text-align: center;
   }
 }
+.filter-tree {
+  .el-tree-node__content {
+    padding: 10px;
+  }
+}

@@ -14,8 +14,8 @@ export default new Router({
       component: Content,
       children: [
         {
-          path:"/",
-          redirect:"/Homepage"
+          path: "/",
+          redirect: "/Homepage"
         },
         {
           path: "",
@@ -28,7 +28,6 @@ export default new Router({
       path: "/Login",
       component: Content,
       children: [
-
         {
           path: "",
           component: () => import("../views/Login.vue")
@@ -46,6 +45,7 @@ export default new Router({
         }
       ]
     },
+    //首页
     {
       path: "/Homepage",
       component: Content,
@@ -56,6 +56,7 @@ export default new Router({
         }
       ]
     },
+
     {
       path: "/Tasks",
       component: Content,
@@ -76,6 +77,22 @@ export default new Router({
         }
       ]
     },
+    {
+      path: "/FormPage",
+      component: Content,
+      children: [
+        {
+          path: "",
+          component: () => import("../views/FormPage.vue")
+        },
+        {
+          path: "CheckForm",
+          name:"checkform",
+          component: () => import("../views/CheckForm.vue")
+        }
+      ]
+    },
+
     /* {
       path: "/about",
       name: "about",

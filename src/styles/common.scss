@@ -15,10 +15,17 @@
   .el-menu-item:nth-child(1) {
     border-top: 1px solid #F0F2F5;
   }
-  .is-active {
+  .isActives {
     border-left:5px solid #409EFF;
     padding: 0px 10px 0 15px !important;
   }
+  .is-opened {
+    border: 0 !important;
+    padding: 0 !important;
+  }
+ .item_style {
+   padding-left: 40px !important;
+ }
   .el-menu-item-group__title {
     padding: 0;
   }
@@ -91,3 +98,80 @@
     padding: 10px;
   }
 }
+.Step_style {
+  width: 1080px;
+  margin-left: 200px;
+  .el-step__head {
+    width: 360px;
+  }
+  .el-step{
+    display: flex;
+    position: relative;
+    width: 360px !important;
+  }
+  .el-step__main {
+    width: 100px;
+    position: absolute !important;
+    top:-7px !important;
+    left: 30px;
+  }
+  .el-step__line {
+    width: 200px;
+    margin-left: 130px;
+  }
+  .el-step__title {
+   font-weight: 500 !important;
+    font-size: 16px !important;
+  }
+  .el-step__icon {
+    background-color: #409EFF;
+    border: 0 !important;
+  }
+  .activeStyle .el-step__icon {
+    background-color: #67C23A;
+  }
+  .el-step__icon-inner {
+    color: white;
+    font-weight: 500;
+  }
+}
+.demo__ruleForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.warning_text {
+  .el-alert {
+    display: flex;
+    align-items: center;
+    width: 600px;
+  }
+  .el-icon-close {
+    font-size: 16px;
+    margin-left: 5px;
+  }
+}
+.el-divider--horizontal {
+  width: 600px !important;
+}
+.success {
+  .el-step__icon  {
+    background-color:#67C23A ;
+    border: 0 !important;
+    width: 60px;
+    height: 60px;
+  }
+  .el-step__icon-inner {
+    color: white;
+   font-size: 30px;
+    font-weight: 500;
+  }
+}
+.box__card  {
+  .clearfix {
+    color: #666666;
+    font-size: 16px;
+  }
+}
+
+

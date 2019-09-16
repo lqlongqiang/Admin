@@ -17,27 +17,42 @@
               v-for="(item, index) in NavigationBan"
               :key="item.title"
               :index="index.toString()"
-              @click="NavigationJump(item)"
+              @click="NavigationJump(item, index)"
+              v-show="index < 3"
+              :class="{ isActives: index === activeindex }"
             >
               <template slot="title">
                 <i :class="item.icon"></i>
                 <span slot="title">{{ item.title }}</span>
               </template>
             </el-menu-item>
-            <!--<el-submenu :index="index.toString()" v-if="index === 3">
-                <template slot="title">
-                  <i :class="item.icon"></i>
-                  <span slot="title">{{ item.title }}</span>
-                </template>
-                <el-menu-item-group>
-                  <el-menu-item
-                    v-for="(item1, index1) in navigationban"
-                    :key="item1.title"
-                    :index="index1.toString()"
-                    >{{ item1.title }}</el-menu-item
-                  >
-                </el-menu-item-group>
-              </el-submenu>-->
+            <el-submenu
+              v-for="(item, index) in NavigationBan"
+              :key="index"
+              v-show="index > 2"
+              :index="index.toString()"
+            >
+              <template slot="title">
+                <i :class="item.icon"></i>
+                <span slot="title">{{ item.title }}</span>
+              </template>
+              <el-menu-item-group
+                v-for="(item1, index1) in navigationban"
+                :key="index1"
+                v-show="index === 3"
+              >
+                <el-menu-item
+                  :index="index1.toString() + 4"
+                  class="item_style"
+                  >{{ item1.title }}</el-menu-item
+                >
+              </el-menu-item-group>
+              <el-menu-item-group v-show="index === 4">
+                <el-menu-item index="4" class="item_style" @click="childJump(item)">
+                  分布表单
+                </el-menu-item>
+              </el-menu-item-group>
+            </el-submenu>
           </el-menu>
         </el-col>
       </el-row>
@@ -82,6 +97,7 @@ export default {
     return {
       isCollapse: false, //控制折叠侧边栏
       isCollaps: true, //控制折叠侧边栏
+      activeindex: 0, //
       NavigationBan: [
         {
           title: "首页",
@@ -106,7 +122,7 @@ export default {
         {
           title: "表单页",
           icon: "el-icon-files",
-          name: "formPage"
+          path: "FormPage"
         }
       ], //侧边栏数据
       navigationban: [
@@ -123,16 +139,19 @@ export default {
     };
   },
   methods: {
-    NavigationJump(item) {
+    NavigationJump(item, index) {
+      //console.log(index);
+      this.$router.push({ path: item.path });
+      this.activeindex = index;
+    },
+    childJump (item) {
       this.$router.push({ path: item.path });
     }
   },
   mounted() {},
   created() {},
   filters: {},
-  computed: {
-
-  },
+  computed: {},
   watch: {},
   directives: {}
 };

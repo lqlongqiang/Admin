@@ -1,7 +1,7 @@
 <template>
   <div id="Content">
     <router-view
-      v-if="$route.path === '/Login' || $route.path === '/Register'"
+      v-if="$route.path === '/Login' || $route.path === '/Register' || $route.path === '/FormPage/CheckForm'"
     ></router-view>
     <el-container style="height: 2000px;" v-else>
       <el-header style="padding: 0;height: 40px;" class=""

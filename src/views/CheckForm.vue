@@ -36,7 +36,6 @@
 </template>
 
 <script>
-    import Bus from "../bus/bus.js"
 export default {
   name: "",
   components: {},
@@ -69,11 +68,11 @@ export default {
     }
   },
   mounted() {
-    this.Accountname = this.$route.params.Accountname;
-    this.Receivables = this.$route.params.Receivables;
-    this.Paymentname = this.$route.params.Paymentname;
-    this.PaymentAmount = this.$route.params.PaymentAmount;
-      console.log(this.$route.params);
+    this.Accountname = this.$route.query.Accountname;
+    this.Receivables = this.$route.query.Receivables;
+    this.Paymentname = this.$route.query.Paymentname;
+    this.PaymentAmount = this.$route.query.PaymentAmount;
+      //console.log(this.$route.query);
   },
   created() {},
   filters: {},

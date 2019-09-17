@@ -184,7 +184,6 @@
 </template>
 
 <script>
-import Bus from "../bus/bus.js";
 export default {
   name: "",
   components: {},
@@ -245,8 +244,8 @@ export default {
     //查看账单
     CheckBill() {
       let jump = this.$router.resolve({
-        name: "checkform",
-        params: {
+        path: "/FormPage/CheckForm",
+        query: {
           Accountname: this.Accountname,
           Receivables: this.Receivables,
           Paymentname: this.Paymentname,

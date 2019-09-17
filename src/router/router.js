@@ -56,7 +56,6 @@ export default new Router({
         }
       ]
     },
-
     {
       path: "/Tasks",
       component: Content,
@@ -67,6 +66,7 @@ export default new Router({
         }
       ]
     },
+    //配置通讯录路由
     {
       path: "/MailList",
       component: Content,
@@ -77,6 +77,22 @@ export default new Router({
         }
       ]
     },
+    //配置组织员工及下面的子路由
+    {
+      path: "/OrganizeStaff",
+      component: Content,
+      children: [
+        {
+          path: "",
+          component: () => import("../views/OrganizeStaff.vue")
+        },
+        {
+          path: "Offer",
+          component: () => import("../views/Offer.vue")
+        }
+      ]
+    },
+    //配置表单页及子路由
     {
       path: "/FormPage",
       component: Content,
@@ -87,11 +103,10 @@ export default new Router({
         },
         {
           path: "CheckForm",
-          name:"checkform",
           component: () => import("../views/CheckForm.vue")
         }
       ]
-    },
+    }
 
     /* {
       path: "/about",

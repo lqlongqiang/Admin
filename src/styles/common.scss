@@ -25,6 +25,7 @@
   }
  .item_style {
    padding-left: 40px !important;
+   border: 0;
  }
   .el-menu-item-group__title {
     padding: 0;
@@ -171,6 +172,11 @@
   .clearfix {
     color: #666666;
     font-size: 16px;
+  }
+}
+.Box__card {
+  .el-card__header {
+    border: 0;
   }
 }
 

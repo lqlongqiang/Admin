@@ -42,13 +42,18 @@
                 v-show="index === 3"
               >
                 <el-menu-item
+                  @click="NavigationJumped(item1, index1)"
                   :index="index1.toString() + 4"
                   class="item_style"
                   >{{ item1.title }}</el-menu-item
                 >
               </el-menu-item-group>
               <el-menu-item-group v-show="index === 4">
-                <el-menu-item index="4" class="item_style" @click="childJump(item)">
+                <el-menu-item
+                  index="4"
+                  class="item_style"
+                  @click="childJump(item, index)"
+                >
                   分布表单
                 </el-menu-item>
               </el-menu-item-group>
@@ -122,12 +127,13 @@ export default {
         {
           title: "表单页",
           icon: "el-icon-files",
-          path: "FormPage"
+          path: "/FormPage"
         }
       ], //侧边栏数据
       navigationban: [
         {
-          title: "offer管理"
+          title: "offer管理",
+          path: "/OrganizeStaff/Offer"
         },
         {
           title: "人员信息"
@@ -139,13 +145,22 @@ export default {
     };
   },
   methods: {
+    //跳转侧边栏路由
     NavigationJump(item, index) {
       //console.log(index);
       this.$router.push({ path: item.path });
       this.activeindex = index;
     },
-    childJump (item) {
+    //子路由跳转
+    NavigationJumped(item1, index1) {
+      this.$router.push({ path: item1.path });
+      this.activeindex = index1 + 6;
+    },
+    //表单页跳转
+    childJump(item) {
       this.$router.push({ path: item.path });
+      //console.log(item);
+
     }
   },
   mounted() {},

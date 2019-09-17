@@ -70,7 +70,8 @@
           <div
             :class="{
               Completion_rate: true,
-              Completion_rates: activeindex === 2
+              Completion_rates: activeindex === 2,
+              Completion_rated: activeindex === 1
             }"
             v-if="activeindex === index"
           >
@@ -299,7 +300,7 @@
       title="复制地址"
       :visible.sync="dialogFormVisibled"
       width="700px"
-      @close ="closeDialog"
+      @close="closeDialog"
     >
       <div class="copy">
         <el-form>
@@ -329,7 +330,9 @@
       <div id="qrCode" ref="qrCodeDiv"></div>
       <div slot="footer" class="dialog-footer">
         <el-button @click="Canceled" size="small">取 消</el-button>
-        <el-button type="primary" @click="Modifyed" size="small">确 定</el-button>
+        <el-button type="primary" @click="Modifyed" size="small"
+          >确 定</el-button
+        >
       </div>
     </el-dialog>
   </div>
@@ -614,9 +617,9 @@ export default {
       } else {
         this.website = "https://github.com";
       }
-      this.$nextTick(function () {
+      this.$nextTick(function() {
         this.getQRcode();
-      })
+      });
     },
     //复制成功
     onCopy() {
@@ -640,17 +643,17 @@ export default {
       });
     },
     //取消复制
-    Canceled () {
+    Canceled() {
       document.getElementById("qrCode").innerHTML = "";
-      this.dialogFormVisibled =false
+      this.dialogFormVisibled = false;
     },
     //确定复制
-    Modifyed () {
+    Modifyed() {
       document.getElementById("qrCode").innerHTML = "";
-      this.dialogFormVisibled =false
+      this.dialogFormVisibled = false;
     },
     //关闭网址弹出框的情况时间
-    closeDialog () {
+    closeDialog() {
       document.getElementById("qrCode").innerHTML = "";
     }
   },
@@ -709,6 +712,7 @@ export default {
   display: flex;
   flex-direction: column;
   margin-right: 100px;
+  width: 100px;
 }
 .progress_title {
   font-size: 14px;
@@ -729,7 +733,17 @@ export default {
   justify-content: center;
   position: absolute;
   top: 32px;
-  left: 251px;
+  left: 273px;
+}
+.Completion_rated {
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  color: #222222;
+  justify-content: center;
+  position: absolute;
+  top: 32px;
+  left: 273px;
 }
 .Completion_rates {
   display: flex;
@@ -739,7 +753,7 @@ export default {
   justify-content: center;
   position: absolute;
   top: 32px;
-  left: 272px;
+  left: 273px;
 }
 .comletion_scoal {
   text-align: center;

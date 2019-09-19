@@ -732,7 +732,7 @@ export default {
   color: #222222;
   justify-content: center;
   position: absolute;
-  top: 32px;
+  top: 30px;
   left: 273px;
 }
 .Completion_rated {
@@ -742,7 +742,7 @@ export default {
   color: #222222;
   justify-content: center;
   position: absolute;
-  top: 32px;
+  top: 30px;
   left: 273px;
 }
 .Completion_rates {
@@ -752,7 +752,7 @@ export default {
   color: #222222;
   justify-content: center;
   position: absolute;
-  top: 32px;
+  top: 30px;
   left: 273px;
 }
 .comletion_scoal {

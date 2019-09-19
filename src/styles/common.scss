@@ -178,6 +178,25 @@
   .el-card__header {
     border: 0;
   }
+  .el-card__body {
+    padding-top: 10px !important;
+  }
+  .el-popper {
+    margin-left: 20px !important;
+  }
 }
-
+.tab_list {
+  .cell {
+    width:120px;
+    white-space:nowrap !important;
+    text-overflow:ellipsis !important;
+    -o-text-overflow: ellipsis !important;
+    overflow:hidden !important;
+    height: 35px;
+    line-height: 35px !important;
+  }
+  .is-center {
+    padding: 0 !important;
+  }
+}
 

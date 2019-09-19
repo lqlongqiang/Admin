@@ -6,5 +6,4 @@
 
 <style scope lang="scss">
 @import "./styles/common";
-
 </style>

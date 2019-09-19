@@ -31,7 +31,56 @@
               >已入职offer({{ entryCount }})</el-button
             >
           </div>
-          <div></div>
+          <div class="tab_list">
+            <el-table
+              ref="multipleTable"
+              :data="OfferList"
+              tooltip-effect="dark"
+              style="width: 100%"
+              @selection-change="handleSelectionChange"
+              :cell-style="Switch(activeIndex)"
+            >
+              <el-table-column type="selection" width="55"></el-table-column>
+              <template v-for="(item, index) in ListOfHeader">
+                <el-table-column
+                  :key="index"
+                  :label="item.title"
+                  :prop="item.prop"
+                  align="center"
+                  v-if="item.display === true"
+                >
+                </el-table-column>
+              </template>
+              <el-table-column label=""> </el-table-column>
+            </el-table>
+            <el-popover
+              placement="bottom-start"
+              width="200"
+              trigger="click"
+              class="icon"
+            >
+              <div class="Set_up">
+                <div class="Set_up_field">
+                  <span class="field_add">添加显示字段</span>
+                  <span class="field_delete">删除显示字段</span>
+                </div>
+                <div class="Type_selection">
+                  <div class="selection">选择间距类型</div>
+                  <div class="Type">
+                    <div
+                      v-for="(item, index) in Typelist"
+                      :key="item.type"
+                      :class="{ active: activeIndex === index }"
+                      @click="TypeSelection(index)"
+                    >
+                      {{ item.type }}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <i class="el-icon-setting" slot="reference"></i>
+            </el-popover>
+          </div>
         </el-card>
       </div>
     </div>
@@ -45,12 +94,108 @@ export default {
   props: {},
   data() {
     return {
+      multipleSelection: [],
+      data: 0,
+      ListOfHeader: [
+        {
+          title: "姓名",
+          prop: "name",
+          display: true
+        },
+        {
+          title: "个人邮箱",
+          prop: "email",
+          display: true
+        },
+        {
+          title: "证件类型",
+          prop: "Document",
+          display: true
+        },
+        {
+          title: "证件号码",
+          prop: "DocumentNumber",
+          display: true
+        },
+        {
+          title: "性别",
+          prop: "sex",
+          display: true
+        },
+        {
+          title: "职位",
+          prop: "position",
+          display: true
+        },
+        {
+          title: "籍贯",
+          prop: "Nativeplace",
+          display: true
+        },
+        {
+          title: "qq",
+          prop: "QQ",
+          display: true
+        },
+        {
+          title: "入职时间",
+          prop: "Entrytime",
+          display: true
+        },
+        {
+          title: "offer状态",
+          prop: "Approvalstatus",
+          display: false
+        },
+        {
+          title: "出生日期",
+          prop: "birthday",
+          display: false
+        },
+        {
+          title: "民族",
+          prop: "Famousrace",
+          display: false
+        },
+        {
+          title: "电话",
+          prop: "tel",
+          display: false
+        },
+        {
+          title: "学历",
+          prop: "Education",
+          display: false
+        },
+        {
+          title: "手机",
+          prop: "phone",
+          display: false
+        },
+        {
+          title: "工作地点",
+          prop: "Workingplace",
+          display: false
+        },
+        {
+          title: "部门",
+          prop: "department",
+          display: false
+        },
+        {
+          title: "婚姻状态",
+          prop: "Maritalstatus",
+          display: false
+        }
+      ], //表格头部列表
+      Typelist: [{ type: "紧凑" }, { type: "适中" }, { type: "宽松" }], //选择的类型
       OfferList: [], //offer人员数据
       stayCount: 0, //待发数量
       alreadyCount: 0, //已发数量
       acceptCount: 0, //已接受数量
       refuseCount: 0, //已拒绝数量
-      entryCount: 0 //已入职数量
+      entryCount: 0, //已入职数量
+      activeIndex: 1 //tab切换默认选择第2个
     };
   },
   methods: {
@@ -78,6 +223,22 @@ export default {
         .catch(err => {
           console.log(err);
         });
+    },
+    //多选
+    handleSelectionChange(val) {
+      this.multipleSelection = val;
+    },
+    //切换间距类型
+    Switch(data) {
+      if (data === 0) {
+        return { padding: "2px" };
+      } else if (data === 2) {
+        return { height: "80px" };
+      }
+    },
+    //点击事件Tab切换
+    TypeSelection(index) {
+      this.activeIndex = index;
     }
   },
   mounted() {
@@ -113,5 +274,46 @@ export default {
 .Box__card {
   width: 98%;
   margin-left: 2%;
+}
+.tab_list {
+  position: relative;
+}
+.icon {
+  position: absolute;
+  top: 0;
+  right: 40px;
+  color: #409eff;
+}
+.Set_up {
+}
+.Set_up_field {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ebeef5;
+  height: 36px;
+  align-items: center;
+}
+.field_add {
+  font-size: 12px;
+  color: #409eff;
+}
+.field_delete {
+  font-size: 12px;
+  color: #409eff;
+}
+.Type_selection {
+}
+.selection {
+  font-size: 14px;
+  color: #888888;
+  padding: 10px 0;
+}
+.active {
+  color: #409eff;
+}
+.Type {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
 }
 </style>

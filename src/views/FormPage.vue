@@ -46,7 +46,7 @@
               <el-input style="width: 450px" v-model="Accountname"></el-input>
             </el-form-item>
             <el-form-item
-              label="付款账户"
+              label="收款账户"
               label-width="100px"
               :hide-required-asterisk="true"
               :required="true"
@@ -88,6 +88,7 @@
               :hide-required-asterisk="true"
               size="small"
               class="label-item"
+              :required="true"
             >
               <el-input
                 style="width: 450px;"

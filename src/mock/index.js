@@ -117,7 +117,7 @@ Mock.mock("api/Offer", "get", {
       phone: /^1([38]\d|5[0-35-9]|7[3678])\d{8}$/, //随机生成电话
       tel: /\d{3}-\d{8}|\d{4}-\d{7}/, //随机生成座机
       email: /[1-9]\d{7,10}@(qq|163|gmail)\.com/, //随机生成邮箱
-      QQ: /[1-9][0-9]{4,14}/,
+      QQ: /[1-9][0-9]{4,11}/,
       "sex|1": ["男", "女"], //随机生成一个性别
       "department|1": [
         "成都分公司",
@@ -161,16 +161,10 @@ Mock.mock("api/Offer", "get", {
         "内蒙古组"
       ], //随机生成一个部门
       "position|1": ["经理", "主管", "员工", "实习生"], //随机生成一个职位
-      "tag|0-3": [
-        {
-          text: "@cword(2,4)",
-          colortext: "@color()"
-        }
-      ],
       Nativeplace: "@city(true)", //随机生成一个省市
       "Maritalstatus|1": ["未婚", "已婚"], //随机生成未婚还是已婚
       Document: "@cword(2,4)", //随机生成证件类型
-      DocumentNumber: "@id()", //随机生成的证件号码
+      DocumentNumber: /[1-9][0-9]{18}/, //随机生成的证件号码
       birthday: "@date('yyyy-MM-dd')", //随机生成出生日期
       "Approvalstatus|1": ["待发", "已发", "已接受", "已拒绝", "已入职"], //随机生成一个
       age: "@natural(18, 60)", //随机生成一个年龄

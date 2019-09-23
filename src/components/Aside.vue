@@ -136,10 +136,12 @@ export default {
           path: "/OrganizeStaff/Offer"
         },
         {
-          title: "人员信息"
+          title: "人员信息",
+          path: "/OrganizeStaff/Personnel"
         },
         {
-          title: "薪酬管理"
+          title: "薪酬管理",
+          path: "/OrganizeStaff/Payment"
         }
       ] //侧边栏嵌套内容
     };
@@ -160,7 +162,6 @@ export default {
     childJump(item) {
       this.$router.push({ path: item.path });
       //console.log(item);
-
     }
   },
   mounted() {},

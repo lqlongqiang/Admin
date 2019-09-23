@@ -89,6 +89,14 @@ export default new Router({
         {
           path: "Offer",
           component: () => import("../views/Offer.vue")
+        },
+        {
+          path: "Personnel",
+          component: () => import("../views/Personnel.vue")
+        },
+        {
+          path: "Payment",
+          component: () => import("../views/Payment.vue")
         }
       ]
     },

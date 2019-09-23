@@ -340,12 +340,12 @@ export default {
     //分页内容
     handleSizeChange(val) {
       this.SizeChange = val;
-      console.log(`每页 ${val} 条`);
+      //console.log(`每页 ${val} 条`);
     },
     //分页内容
     handleCurrentChange(val) {
       this.currentPage4 = val;
-      console.log(`当前页: ${val}`);
+      //console.log(`当前页: ${val}`);
     },
     //添加字段
     Add() {
@@ -408,6 +408,7 @@ export default {
   margin-left: 2%;
   justify-content: space-between;
   align-items: center;
+  height: 40px;
 }
 .offer_icon_title {
   display: flex;

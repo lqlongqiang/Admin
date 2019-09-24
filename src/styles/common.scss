@@ -201,3 +201,106 @@
     padding: 5px;
   }
 }
+.tasks {
+  .fc-head {
+    border: 0;
+  }
+  .fc-center {
+    font-weight: 500 !important;
+    color: #333333 !important;
+  }
+  .fc-row {
+    padding-bottom: 20px;
+  }
+  .fc-head-container {
+    border: 0;
+  }
+  .fc-day-header {
+    border: 0;
+    color: #444444;
+    font-weight: 500;
+  }
+  .fc-button-group {
+  }
+  .fc-prev-button {
+    background: white;
+    width: 60px;
+    padding: 0;
+
+  }
+  .fc-next-button {
+    background: white;
+    width: 60px;
+    padding: 0;
+  }
+/*  .fc-today-button {
+    padding: 0;
+    background-color: white;
+    border: 0;
+    color: #45B984;
+  }*/
+  .fc-today-button {
+    font-size: 15px;
+    color: #45B984;
+
+  }
+  .fc-icon {
+    font-weight: 500 !important;
+    color: #444444 !important;
+  }
+  .fc-button-group {
+    margin-left: 20px;
+    font-size: 15px;
+
+    button {
+      width: 80px;
+      color: #000;
+      border: 1px solid #bbbfcd;
+    }
+
+    button:first-child {
+      border-top-left-radius: 20px;
+      border-bottom-left-radius: 20px;
+    }
+
+    button:last-child {
+      border-top-right-radius: 20px;
+      border-bottom-right-radius: 20px;
+    }
+  }
+  .fc-event-container {
+
+  }
+  .fc-day-grid-event {
+    border: 1px solid #CAE8CA !important;
+    margin: 0 !important;
+    color: #666666;
+  }
+.fc-content {
+  background-color: #E0EFD5;
+  color: #333333;
+}
+  .fc-past {
+    color: #666666;
+  }
+  .fc-today {
+    color: #666666;
+  }
+  .fc-future {
+    color: #666666;
+  }
+ .fc-day-top {
+   padding: 10px 10px 0 10px;
+ }
+}
+.form {
+  .el-dialog__title {
+    display: block;
+    color: #409EFF !important;
+    border-bottom: 4px solid #409EFF;
+    height: 30px;
+    width: 40px;
+  }
+}
+
+

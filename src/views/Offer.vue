@@ -289,7 +289,7 @@ export default {
       this.$axios
         .req("api/Offer")
         .then(respons => {
-          console.log(respons);
+          //console.log(respons);
           this.OfferList = respons.data.data;
           this.OfferList.forEach(item => {
             if (item.Approvalstatus === "待发") {

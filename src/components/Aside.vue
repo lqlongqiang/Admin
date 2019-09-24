@@ -159,8 +159,9 @@ export default {
       this.activeindex = index1 + 6;
     },
     //表单页跳转
-    childJump(item) {
+    childJump(item, index) {
       this.$router.push({ path: item.path });
+      this.activeindex = index;
       //console.log(item);
     }
   },

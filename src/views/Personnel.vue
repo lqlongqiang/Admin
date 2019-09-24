@@ -186,7 +186,7 @@ export default {
       this.$axios
         .req("api/Personnel")
         .then(respons => {
-          console.log(respons);
+          //console.log(respons);
           this.PersonnelLsit = respons.data.data;
         })
         .catch(err => {

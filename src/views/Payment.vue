@@ -89,6 +89,14 @@
                 >添加更多</el-button
               >
             </div>
+            <div class="Total">
+              <span class="total">总计</span>
+              <span class="total">{{ Totalplan }} </span>
+              <span class="total">{{ TotalActual }}</span>
+              <span class="Middle"></span>
+              <span class="total">{{ TotalLastPlan }}</span>
+              <span class="total">{{ TotalLastActual }}</span>
+            </div>
           </el-card>
         </div>
       </div>
@@ -196,7 +204,16 @@ export default {
     changeData() {
       this.inspect = "";
     },
-    AddMore() {}
+    AddMore() {
+      let addData = {
+        Salary: "",
+        Planned: "",
+        Actualed: "",
+        LastmonthPlanned: 0,
+        LastmonthActualed: 0
+      };
+      this.PaymentList.push(addData);
+    }
   },
   mounted() {
     this.getPaymentData();
@@ -207,7 +224,40 @@ export default {
   },
   created() {},
   filters: {},
-  computed: {},
+  computed: {
+    //计划总计
+    Totalplan() {
+      let sum = 0;
+      this.PaymentList.forEach(item => {
+        sum = sum + parseInt(item.Planned * 1);
+      });
+      return sum;
+    },
+    //实际总计
+    TotalActual() {
+      let sum1 = 0;
+      this.PaymentList.forEach(item => {
+        sum1 = sum1 + parseInt(item.Actualed * 1);
+      });
+      return sum1;
+    },
+    //上月计划总计
+    TotalLastPlan() {
+      let sum2 = 0;
+      this.PaymentList.forEach(item => {
+        sum2 = sum2 + parseInt(item.LastmonthPlanned);
+      });
+      return sum2;
+    },
+    //上月实际总计
+    TotalLastActual() {
+      let sum3 = 0;
+      this.PaymentList.forEach(item => {
+        sum3 = sum3 + parseInt(item.LastmonthActualed);
+      });
+      return sum3;
+    }
+  },
   watch: {},
   directives: {}
 };
@@ -269,6 +319,23 @@ export default {
   color: #c0c2c4 !important;
 }
 .Add_Button {
-  padding: 20px 60px;
+  padding: 20px 40px;
+}
+.Total {
+  width: 100%;
+  display: flex;
+  height: 40px;
+  align-items: center;
+  color: #0294e5;
+  background-color: #f0f2f5;
+}
+.total {
+  display: block;
+  width: 182px;
+  text-align: center;
+}
+.Middle {
+  display: block;
+  width: 360px;
 }
 </style>

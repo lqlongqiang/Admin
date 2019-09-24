@@ -12,7 +12,8 @@ import "mavon-editor/dist/css/index.css";
 import JsonExcel from "vue-json-excel";
 import "./mock";
 import VueClipboard from "vue-clipboard2";
-import QRCode from 'qrcodejs2';
+import QRCode from "qrcodejs2";
+import LunarFullCalendar from "vue-lunar-full-calendar";
 
 Vue.prototype.$qrCode = QRCode;
 Vue.prototype.$axios = axios;
@@ -23,6 +24,7 @@ Vue.use(VCharts);
 Vue.use(mavonEditor);
 Vue.use(VueClipboard);
 Vue.component("downloadExcel", JsonExcel);
+Vue.use(LunarFullCalendar);
 
 new Vue({
   router,
